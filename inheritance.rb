@@ -26,45 +26,73 @@
 # 									India
 
 
-class Country
-	def initialize
-		puts "This is the Country."
-	end
 
-	def countryName 
+
+
+class Country
+	#  def initialize
+	#  	puts "This is the Country is india"
+	# end
+
+	def countryName(x)
+		@name1=x
+		puts "contry name is->#{@name1}"
 	 # give the country name.
 	end
 end
 
-class City
-	def initialize
-		puts "This is the City"
-	end
+
+class City < Country
+	 # def initialize
+	 # 	puts "This is the City Mysore"
+	 # end
+	def cityName(y)
+		@name2=y
+		puts "city name->#{@name2}"
 
 	# define cityName  --> give the city name
+	end
 end
 
 
-class Address < Country
-	def initialize
-		puts "This is my address."
-	end
-
+class Address < City
+ 	#  def initialize
+ 	# 	puts "This is my address. "
+ 	# end
+   def street(z)
+   	@name3=z
+   	puts " streetAddress-> #{@name3}"
+   	
+   end
 	# define completeAddress --> complete address. 
+ end
+ 
 
-end
+class Number < Address
+#  	def initialize
+#  		puts "This is my address."
+# 	end
 
-class Number < City
-	def initialize
-		puts "This is my address."
-	end
-
-	# define streetAddress --> '#96, Railway Layout, Vijaynagar'
+# 	# define streetAddress --> '#96, Railway Layout, Vijaynagar'
 
 	def completeAddress
-		puts streetAddress cityName countryName 
+		
+ 		# puts "complete completeAddress #96, Railway Layout, Vijaynagar  }"
+ 		puts "completeAddress -> #{@name3} , #{@name2} , #{@name1}"
 	end
-end
+ end
+
+	# p=City.new
+	# p.countryName("india")
+    # p.cityName("Mysore")
+    # s=Address.new
+    # s.street("#96, Railway Layout, Vijaynagar")
+ r=Number.new
+ r.countryName("Belgium")
+ r.cityName("Ghent")
+ r.street("St. Pietersnieuwstraat 33, 9000 ")
+
+ r.completeAddress
 
 
 
